@@ -1,0 +1,101 @@
+/* Section */
+.category-grid-section {
+  padding: var(--spacing-16) 0;
+  background-color: var(--color-white);
+}
+
+.category-grid-header {
+  text-align: center;
+  margin-bottom: var(--spacing-12);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-2);
+}
+
+.section-title em {
+  font-family: var(--font-primary);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-primary);
+}
+
+.section-subtitle {
+  font-size: var(--text-base);
+  color: var(--color-gray-500);
+  margin-top: var(--spacing-2);
+}
+
+/* Grid */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-6);
+}
+
+@media (min-width: 768px) {
+  .category-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 across on desktop for cleaner look */
+    gap: var(--spacing-8);
+  }
+}
+
+/* Card */
+.category-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.category-card-image {
+  position: relative;
+  aspect-ratio: 3/4; /* Portrait fashion ratio */
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-4);
+  background-color: var(--color-gray-50);
+}
+
+.category-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.category-card:hover .category-card-image img {
+  transform: scale(1.1);
+}
+
+.category-card-content {
+  text-align: center;
+}
+
+.category-card-title {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-1);
+}
+
+.category-card-count {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Hide extra elements for cleaner look */
+.category-card-description,
+.category-card-link {
+  display: none;
+}

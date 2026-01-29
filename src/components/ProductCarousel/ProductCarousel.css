@@ -1,0 +1,112 @@
+/* Product Carousel Section */
+.product-carousel-section {
+  padding: var(--spacing-12) 0;
+  background-color: var(--color-gray-50);
+}
+
+.product-carousel-header {
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+}
+
+/* Carousel Wrapper */
+.product-carousel-wrapper {
+  position: relative;
+  margin: 0 calc(var(--spacing-4) * -1);
+}
+
+@media (min-width: 768px) {
+  .product-carousel-wrapper {
+    margin: 0;
+  }
+}
+
+/* Carousel */
+.product-carousel {
+  display: flex;
+  gap: var(--spacing-4);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: var(--spacing-2) var(--spacing-4);
+}
+
+.product-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Carousel Item */
+.product-carousel-item {
+  flex: 0 0 auto;
+  width: 240px;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 640px) {
+  .product-carousel-item {
+    width: 260px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-carousel-item {
+    width: 280px;
+  }
+}
+
+/* Carousel Arrows */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-700);
+  box-shadow: var(--shadow-md);
+  z-index: 10;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.carousel-arrow:hover {
+  background-color: var(--color-gray-900);
+  color: var(--color-white);
+}
+
+.carousel-arrow-left {
+  left: var(--spacing-2);
+}
+
+.carousel-arrow-right {
+  right: var(--spacing-2);
+}
+
+@media (min-width: 768px) {
+  .carousel-arrow-left {
+    left: calc(var(--spacing-4) * -1);
+  }
+
+  .carousel-arrow-right {
+    right: calc(var(--spacing-4) * -1);
+  }
+}
+
+/* Hide arrows on mobile - enable swipe */
+@media (max-width: 767px) {
+  .carousel-arrow {
+    display: none;
+  }
+}
+
+/* CTA Button */
+.product-carousel-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-8);
+}

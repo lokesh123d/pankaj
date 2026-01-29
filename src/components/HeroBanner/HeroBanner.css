@@ -1,0 +1,141 @@
+/* Hero Banner */
+.hero-banner {
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+}
+
+/* Slides */
+.hero-slide {
+  display: none;
+  width: 100%;
+}
+
+.hero-slide.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Mobile height constraint */
+@media (max-width: 767px) {
+  .hero-image {
+    max-height: 70vh;
+    object-fit: cover;
+  }
+}
+
+/* Navigation Arrows */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-700);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  opacity: 0;
+  box-shadow: var(--shadow-md);
+}
+
+.hero-slider:hover .hero-arrow {
+  opacity: 1;
+}
+
+.hero-arrow:hover {
+  background-color: var(--color-white);
+  color: var(--color-gray-900);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.hero-arrow-prev {
+  left: var(--spacing-4);
+}
+
+.hero-arrow-next {
+  right: var(--spacing-4);
+}
+
+@media (min-width: 768px) {
+  .hero-arrow-prev {
+    left: var(--spacing-8);
+  }
+
+  .hero-arrow-next {
+    right: var(--spacing-8);
+  }
+}
+
+/* Always show on mobile */
+@media (max-width: 767px) {
+  .hero-arrow {
+    opacity: 1;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Dots Navigation */
+.hero-dots {
+  position: absolute;
+  bottom: var(--spacing-4);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.hero-dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-dot.active {
+  background-color: var(--color-white);
+  transform: scale(1.2);
+}
+
+@media (min-width: 768px) {
+  .hero-dots {
+    bottom: var(--spacing-6);
+  }
+
+  .hero-dot {
+    width: 12px;
+    height: 12px;
+  }
+}
